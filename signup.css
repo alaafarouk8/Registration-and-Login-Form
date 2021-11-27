@@ -1,0 +1,205 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif ; 
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    min-height: 100vh;
+	background-color:whitesmoke;
+}
+.container {
+	position: relative;
+	width: 70vw;
+	height: 80vh;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0px 4px 20px 0 rgb(0, 0, 0,0.3) , 0px 6px 20px 0 rgb(0, 0, 0,0.3);
+}
+.container::before{
+	content: "";
+	position: absolute;
+	top:0;
+	width: 100% ; 
+	height: 100%;
+	background: linear-gradient(-45deg , #fa1e60 , white);
+	z-index: 6;
+	transform: translate(100%);
+	left: -50%;
+	transition: 1s ease-in-out;
+}
+.panels-container{
+	position: absolute ; 
+	top: 0;
+	left:0 ; 
+	width: 100%; 
+	height: 100%; 
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.panel{
+	z-index: 6;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width:35% ;
+	min-width: 238px;
+	padding: 0 10px ; 
+	text-align: center;
+}
+.panel h3 {
+	font-size: 24px; 
+	font-weight: 100;
+}
+.panel p {
+	font-size: 24px; 
+    padding: 10px  0; 
+}
+.content{
+	color: white;
+	transition: 1s ease-in-out;
+	transition-delay: 0.4s;
+
+}
+.image{
+	width: 100%;
+	transition: 1s ease-in-out;
+	transition-delay: 0.4s;
+}
+.signup-signin
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	z-index: 5;
+}
+form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 40%;
+	min-width: 238px;
+	padding: 0 10px;
+}
+.header
+{
+	font-size: 30px;
+	color: #AE0035 ;
+	margin-bottom: 10px;
+}
+.input-field-style
+{
+	width: 100%;
+	height: 50px; 
+	background-color:whitesmoke;
+	border: 2px solid #AE0035 ; 
+    margin: 10px 0 ;
+	border-radius: 50px; 
+    display: flex;
+	align-items: center;
+}
+.input-field-style i {
+flex: 1;
+text-align: center;
+color: #AE0035; 
+font-size: 18px;
+}
+.input-field-style input{
+	flex: 5;
+	background: none;
+	border: none;
+	outline: none;
+	width: 100%;
+	font-size: 18px;
+	font-weight: 600;
+	color: black;
+}
+.btn
+{
+	width: 150px;
+	height: 50px;
+	border: none;
+	border-radius: 50px;
+	background: #AE0035;
+	color: white;
+	font-weight: 600;
+	margin: 10px 0;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.btn:hover
+{
+	background: #a52048 ;
+}
+.social-text{
+	margin: 10px 0;
+	font-size: 16px;
+}
+.social-media{
+	display: flex;
+	justify-content: center;
+}
+.social-icon{
+    height: 45px;
+ 	width: 45px;
+ 	display: flex;
+	justify-content: center;
+	align-items : center;
+	color: black;
+	border: 1px solid black;
+	border-radius: 50px;
+	margin: 0 5px;
+
+}
+.social-icon:hover{
+	color: #AE0035;
+	border-color: #AE0035;
+}
+a {
+	text-decoration: none;
+}
+.container.signup::before{
+	transform: translateX(0);
+}
+/*  */
+.left-panel .image ,
+.left-panel .content
+{
+	transform: translateX(0);
+}
+.right-panel .image ,
+.right-panel .content
+{
+	transform: translateX(-200%);
+}
+.container.signup .left-panel .image ,
+.container.signup .left-panel .content{
+	transform: translateX(200%);
+}
+.container.signup .right-panel .image ,
+.container.signup .right-panel .content{
+	transform: translateX(0%);
+}
+.right-panel{
+	pointer-events: none;
+}
+.container.signup .left-panel 
+{
+	pointer-events: none;
+}
+.container.signup .right-panel 
+{
+	pointer-events: all;
+}
